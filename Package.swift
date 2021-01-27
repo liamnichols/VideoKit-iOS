@@ -7,7 +7,7 @@ let package = Package(
     name: "VideoKit",
     platforms: [
         // Add support for all platforms starting from a specific version.
-        .macOS(.v10_15),
+        //.macOS(.v10_15),
         .iOS(.v11),
     ],
     products: [
@@ -24,10 +24,10 @@ let package = Package(
             name: "VideoKitRecorder",
             targets: ["VideoKitRecorder"]
         ),
-        .library(
-            name: "VideoKitLive",
-            targets: ["VideoKitLive"]
-        ),
+        //.library(
+        //    name: "VideoKitLive",
+        //    targets: ["VideoKitLive"]
+        //),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -51,10 +51,10 @@ let package = Package(
             url: "https://cdn.video.io/ios/VideoKit-1.0.3.zip",
             checksum: "b793a2c075b1e6a6fc22cfabd64895c25fbd543d1fe8d88380937ffbf57bbaef"
         ),
-        .binaryTarget(
-            name: "VideoKitLive",
-            url: "https://cdn.video.io/ios/VideoKit-1.0.3.zip",
-            checksum: "b793a2c075b1e6a6fc22cfabd64895c25fbd543d1fe8d88380937ffbf57bbaef"
-        )
+        //.binaryTarget(
+        //    name: "VideoKitLive",
+        //    url: "https://cdn.video.io/ios/VideoKit-1.0.3.zip",
+        //    checksum: "b793a2c075b1e6a6fc22cfabd64895c25fbd543d1fe8d88380937ffbf57bbaef"
+        //)
     ]
 )
