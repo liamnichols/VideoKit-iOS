@@ -5,11 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "VideoKit",
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-        .package(url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
-    ],
     platforms: [
         // Add support for all platforms starting from a specific version.
         .macOS(.v10_15),
@@ -33,6 +28,11 @@ let package = Package(
             name: "VideoKitLive",
             targets: ["VideoKitLive"]
         ),
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
