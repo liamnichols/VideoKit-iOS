@@ -3,6 +3,8 @@
 
 import PackageDescription
 
+let version = "1.0.3"
+
 let package = Package(
     name: "VideoKit",
     platforms: [
@@ -24,10 +26,10 @@ let package = Package(
             name: "VideoKitRecorder",
             targets: ["VideoKitRecorder"]
         ),
-        //.library(
-        //    name: "VideoKitLive",
-        //    targets: ["VideoKitLive"]
-        //),
+        .library(
+            name: "VideoKitLive",
+            targets: ["VideoKitLive"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -38,23 +40,23 @@ let package = Package(
         // swift package compute-checksum VideoKit-1.0.3.zip
         .binaryTarget(
             name: "VideoKitCore",
-            url: "https://cdn.video.io/ios/1.0.3/VideoKitCore.xcframework.zip",
+            url: "https://cdn.video.io/ios/\(version)/VideoKitCore.xcframework.zip",
             checksum: "151d8072a01ae75e9287ca0a1c315434a46679c8680dc3b522e950a4a2105f06"
         ),
         .binaryTarget(
             name: "VideoKitPlayer",
-            url: "https://cdn.video.io/ios//1.0.3/VideoKitPlayer.xcframework.zip",
+            url: "https://cdn.video.io/ios/\(version)/VideoKitPlayer.xcframework.zip",
             checksum: "474e9a80a5735a2abae3a58aa9c2fef28c6f8f4c12947a3e92dd20a8f1a3de29"
         ),
         .binaryTarget(
             name: "VideoKitRecorder",
-            url: "https://cdn.video.io/ios/1.0.3/VideoKitRecorder.xcframework.zip",
-            checksum: "77ac79245007d62a66d77b382236dc3fcb4f1be02aa384a079c095e0770c2921"
+            url: "https://cdn.video.io/ios/\(version)/VideoKitRecorder.xcframework.zip",
+            checksum: "033562794f748d81d6826fc20daa002ba362bd735cafa66a8c21f1d54ecb3a76"
         ),
-        //.binaryTarget(
-        //    name: "VideoKitLive",
-        //    url: "https://cdn.video.io/ios/VideoKit-1.0.3.zip",
-        //    checksum: "b793a2c075b1e6a6fc22cfabd64895c25fbd543d1fe8d88380937ffbf57bbaef"
-        //)
+        .binaryTarget(
+            name: "VideoKitLive",
+            url: "https://cdn.video.io/ios/\(version)/VideoKitLive.xcframework.zip",
+            checksum: "34bc0eaaf7ad526629eb0ffed408c5b0777fb2e6546ca3b1e35a3547b311385d"
+        )
     ]
 )
