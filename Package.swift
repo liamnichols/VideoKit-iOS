@@ -41,7 +41,7 @@ let package = Package(
         .binaryTarget(
             name: "VideoKitCore",
             url: "https://cdn.video.io/ios/\(version)/VideoKitCore.xcframework.zip",
-            checksum: "ec2082e2e60625f4505553815812680a4794cdd246adb651e2f5374df6f3c17c"
+            checksum: "7cf9476c8edd84cb9558a931b4e9bf87a0148ca32499f1449012285a38ca8196"
         ),
         .binaryTarget(
             name: "VideoKitPlayer",
