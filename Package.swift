@@ -35,6 +35,8 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
+        .package(url: "https://github.com/shogo4405/HaishinKit.swift.git", .upToNextMajor(from: "1.0.10")),
+        .package(url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .branch("main")),
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
