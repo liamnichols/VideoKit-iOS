@@ -33,7 +33,6 @@ let package = Package(
     ],
     dependencies: [
         // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
-        .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", .upToNextMajor(from: "1.1.1")),
         .package(name: "AmazonIVSPlayer", url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .upToNextMajor(from: "1.2.0")),
     ],
     targets: [
@@ -66,13 +65,12 @@ let package = Package(
         .binaryTarget(
             name: "VideoKitLive",
             url: "https://cdn.video.io/ios/\(version)/VideoKitLive.xcframework.zip",
-            checksum: "669b80ff0b872d27e2db3b3bb50abcd1bf7f81d05a69d8cd4bff485721ce5e52"
+            checksum: "b59bc50e701e09838b6e255cb20e2312b8f4ab5106ff3eb4e31519cbe437077b"
         ),
         .target(
             name: "VideoKitLiveWrapper",
             dependencies: [
                 .target(name: "VideoKitLive"),
-                "HaishinKit",
                 "AmazonIVSPlayer",
             ],
             path: "VideoKitLiveWrapper"
