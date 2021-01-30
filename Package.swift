@@ -16,7 +16,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "VideoKitCore",
-            targets: ["VideoKitCore"]
+            targets: ["VideoKitCoreWrapper"]
         ),
         .library(
             name: "VideoKitPlayer",
@@ -28,15 +28,13 @@ let package = Package(
         ),
         .library(
             name: "VideoKitLive",
-            targets: ["VideoKitLive"]
+            targets: ["VideoKitLiveWrapper"]
         ),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-        .package(url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
-        .package(url: "https://github.com/shogo4405/HaishinKit.swift.git", .upToNextMajor(from: "1.0.10")),
-        .package(url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .branch("main")),
+        // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
+        .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", .upToNextMajor(from: "1.1.1")),
+        .package(name: "AmazonIVSPlayer", url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .branch("main")),
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
@@ -44,6 +42,16 @@ let package = Package(
             name: "VideoKitCore",
             url: "https://cdn.video.io/ios/\(version)/VideoKitCore.xcframework.zip",
             checksum: "7cf9476c8edd84cb9558a931b4e9bf87a0148ca32499f1449012285a38ca8196"
+        ),
+        .target(
+              name: "VideoKitCoreWrapper",
+              dependencies: [
+                .target(name: "VideoKitCore"),
+              ],
+              path: "VideoKitCoreWrapper",
+              linkerSettings: [
+                .linkedLibrary("z"),
+              ]
         ),
         .binaryTarget(
             name: "VideoKitPlayer",
@@ -59,6 +67,15 @@ let package = Package(
             name: "VideoKitLive",
             url: "https://cdn.video.io/ios/\(version)/VideoKitLive.xcframework.zip",
             checksum: "669b80ff0b872d27e2db3b3bb50abcd1bf7f81d05a69d8cd4bff485721ce5e52"
-        )
+        ),
+        .target(
+            name: "VideoKitLiveWrapper",
+            dependencies: [
+                .target(name: "VideoKitLive"),
+                "HaishinKit",
+                "AmazonIVSPlayer",
+            ],
+            path: "VideoKitLiveWrapper"
+        ),
     ]
 )
