@@ -34,7 +34,7 @@ let package = Package(
     dependencies: [
         // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
         .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", .upToNextMajor(from: "1.1.1")),
-        .package(name: "AmazonIVSPlayer", url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .branch("main")),
+        .package(name: "AmazonIVSPlayer", url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .upToNextMajor(from: "1.2.0")),
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
