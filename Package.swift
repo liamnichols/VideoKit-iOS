@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.4"
+let version = "1.0.5"
 
 let package = Package(
     name: "VideoKit",
@@ -33,14 +33,13 @@ let package = Package(
     ],
     dependencies: [
         // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
-        .package(name: "AmazonIVSPlayer", url: "https://github.com/Video-io/AmazonIVSPlayer.swift", .upToNextMajor(from: "1.2.0")),
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
         .binaryTarget(
             name: "VideoKitCore",
             url: "https://cdn.video.io/ios/\(version)/VideoKitCore.xcframework.zip",
-            checksum: "7cf9476c8edd84cb9558a931b4e9bf87a0148ca32499f1449012285a38ca8196"
+            checksum: "c6c2b0129ef76208c24d8cbc7153f0f7c15fd92382efbb581c1c9a3e34743973"
         ),
         .target(
               name: "VideoKitCoreWrapper",
@@ -55,23 +54,22 @@ let package = Package(
         .binaryTarget(
             name: "VideoKitPlayer",
             url: "https://cdn.video.io/ios/\(version)/VideoKitPlayer.xcframework.zip",
-            checksum: "42c7a09875c709b201e768e46b7ddf84903e407dbac30493fb45101a8e369c00"
+            checksum: "55cf74ec10c5e9fcecea8df4254b8339ac24c4229228735805d10c857d048b8f"
         ),
         .binaryTarget(
             name: "VideoKitRecorder",
             url: "https://cdn.video.io/ios/\(version)/VideoKitRecorder.xcframework.zip",
-            checksum: "3c2aadeadef2935507ac4e6094912ec37dd7b86e49f4d11f7ae21715d158455d"
+            checksum: "1bbc34f068217537e7468c70562388d064f6a23c8e9440098a41c5e0100fed08"
         ),
         .binaryTarget(
             name: "VideoKitLive",
             url: "https://cdn.video.io/ios/\(version)/VideoKitLive.xcframework.zip",
-            checksum: "b59bc50e701e09838b6e255cb20e2312b8f4ab5106ff3eb4e31519cbe437077b"
+            checksum: "9b7de0688586980fd06b5f5b469a693d02677af7cd542b2f24c89e5bd3382af8"
         ),
         .target(
             name: "VideoKitLiveWrapper",
             dependencies: [
                 .target(name: "VideoKitLive"),
-                "AmazonIVSPlayer",
             ],
             path: "VideoKitLiveWrapper"
         ),
