@@ -32,14 +32,14 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
+        .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", from: "1.1.2")
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
         .binaryTarget(
             name: "VideoKitCore",
             url: "https://cdn.video.io/ios/\(version)/VideoKitCore.xcframework.zip?ignoreCache=1",
-            checksum: "47c46b4f8c1a2ef8a3e50c582adbda8e65c99d2788137554fec97364be1db682"
+            checksum: "5f3289569e16fa1bb1e2c612db3eda96d21fbb98046dac9433e38f1223711fb8"
         ),
         .target(
               name: "VideoKitCoreWrapper",
@@ -54,12 +54,12 @@ let package = Package(
         .binaryTarget(
             name: "VideoKitPlayer",
             url: "https://cdn.video.io/ios/\(version)/VideoKitPlayer.xcframework.zip?ignoreCache=1",
-            checksum: "ade5ec12ba9156448941e74239d3850cd7bed22e210ca7687cf5c3b478657020"
+            checksum: "212299f86c1ce5b0f92083d95e9b58d6b21bfcbb4b6928c66a125db17147cedf"
         ),
         .binaryTarget(
             name: "VideoKitRecorder",
             url: "https://cdn.video.io/ios/\(version)/VideoKitRecorder.xcframework.zip?ignoreCache=1",
-            checksum: "458f2c29dbff991c2a04b237a2b2d22399537d1bae4346d837a2fa15be510300"
+            checksum: "b621e46a2cd2b4b5a11e3f07917a9f171a3c51818fb15092de1a20f8c90f76c3"
         ),
         .binaryTarget(
             name: "VideoKitLive",
@@ -70,6 +70,7 @@ let package = Package(
             name: "VideoKitLiveWrapper",
             dependencies: [
                 .target(name: "VideoKitLive"),
+                "HaishinKit",
             ],
             path: "VideoKitLiveWrapper"
         ),

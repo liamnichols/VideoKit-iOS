@@ -32,7 +32,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // .package(name: "zlib", url:"https://github.com/fourplusone/swift-package-zlib", .branch("master")),
+        .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", from: "1.1.2")
     ],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
@@ -70,6 +70,7 @@ let package = Package(
             name: "VideoKitLiveWrapper",
             dependencies: [
                 .target(name: "VideoKitLive"),
+                "HaishinKit",
             ],
             path: "VideoKitLiveWrapper"
         ),

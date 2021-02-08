@@ -2,3 +2,6 @@
 Package.resolved
 DerivedData
 .swiftpm
+*.xcframework.zip
+.DS_Store
+
