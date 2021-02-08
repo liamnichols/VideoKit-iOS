@@ -6,6 +6,13 @@ if [ "$1" = "" ]; then
   exit 1
 fi
 
+if [ "$2" = "" ]; then
+  echo "Provide the version as second parameter. (e.g. 1.0.5)"
+  echo ""
+  exit 1
+fi
+
+VERSION="${2}"
 VK_CORE="`swift package compute-checksum \"$1/VideoKitCore.xcframework.zip\"`"
 VK_RECORDER="`swift package compute-checksum \"$1/VideoKitRecorder.xcframework.zip\"`"
 VK_PLAYER="`swift package compute-checksum \"$1/VideoKitPlayer.xcframework.zip\"`"
@@ -16,7 +23,9 @@ echo "Recorder: $VK_RECORDER"
 echo "Player: $VK_PLAYER"
 echo "Live: $VK_LIVE"
 
-
-# todo: replace checksums in package file
-#sed -i -e '0,/checksum: ".*?"/s//checksum: "$VK_CORE"/' Package.swift
-#awk 'NR==1,/checksum: "[a-z0-9]+"/{sub(/checksum: \"[a-z0-9]+\"/, "checksum: \"123\"")} 1' Package.swift
+cp Package.template.swift Package.swift
+sed -i '' "s/__VIDEOKIT_VERSION__/${VERSION}/g" Package.swift
+sed -i '' "s/__CORE_CHECKSUM__/${VK_CORE}/g" Package.swift
+sed -i '' "s/__PLAYER_CHECKSUM__/${VK_PLAYER}/g" Package.swift
+sed -i '' "s/__RECORDER_CHECKSUM__/${VK_RECORDER}/g" Package.swift
+sed -i '' "s/__LIVE_CHECKSUM__/${VK_LIVE}/g" Package.swift
