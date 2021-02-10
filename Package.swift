@@ -31,9 +31,7 @@ let package = Package(
             targets: ["VideoKitLiveWrapper"]
         ),
     ],
-    dependencies: [
-        .package(name: "HaishinKit", url: "https://github.com/shogo4405/HaishinKit.swift", from: "1.1.2")
-    ],
+    dependencies: [],
     targets: [
         // swift package compute-checksum VideoKit-1.0.3.zip
         .binaryTarget(
@@ -70,7 +68,6 @@ let package = Package(
             name: "VideoKitLiveWrapper",
             dependencies: [
                 .target(name: "VideoKitLive"),
-                "HaishinKit",
             ],
             path: "VideoKitLiveWrapper"
         ),
