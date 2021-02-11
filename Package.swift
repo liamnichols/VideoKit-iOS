@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.5"
+let version = "1.0.5a"
 
 let package = Package(
     name: "VideoKit",
@@ -62,7 +62,7 @@ let package = Package(
         .binaryTarget(
             name: "VideoKitLive",
             url: "https://cdn.video.io/ios/\(version)/VideoKitLive.xcframework.zip?ignoreCache=1",
-            checksum: "1b57f92028f89865303148ed8f37435603c74864946be1907a5c9de3d04a7136"
+            checksum: "4c36e8102369af3dd4a20c72cdd5b4d49fd7ee0d7fa29f8ec5df118ff4b179e9"
         ),
         .target(
             name: "VideoKitLiveWrapper",
