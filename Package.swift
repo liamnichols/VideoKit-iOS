@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.5b"
+let version = "1.0.5"
 
 let package = Package(
     name: "VideoKit",
